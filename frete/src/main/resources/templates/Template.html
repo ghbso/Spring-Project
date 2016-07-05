@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/frete.css}" />
+
+</head>
+
+
+<body>
+
+	<header>
+		<nav class="navbar navbar-inverse navbar-static-top navbar-default">
+			<div class="container-fluid">
+
+				<div class="navbar-header navbar-left">
+					<a class="navbar-brand" href="cliente">Sistema de Frete</a>
+				</div>
+
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="nav-link" th:href="@{/cliente}">Cadastro
+							Cliente <span class="sr-only">(current)</span>
+					</a></li>
+					<li><a class="nav-link " th:href="@{/cidade}">Cadastro
+							Cidade</a></li>
+					<li><a class="nav-link " th:href="@{/frete}">Cadastro
+							Frete</a></li>
+					<li><a class="nav-link " th:href="@{/visualiza-frete}">Visualizar 
+							Fretes</a></li>
+
+
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main class="container-principal" layout:fragment="conteudo"> </main>
+
+	<script th:src="@{/js/jquery-2.2.3.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/bootstrap-formhelpers-phone.js}"></script>
+	<script th:src="@{/js/jquery.maskMoney.min.js}"></script>
+	<script th:src="@{/js/frete.js}"></script>
+
+</body>
+
+</html>

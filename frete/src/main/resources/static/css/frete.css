@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+.navbar-brand {
+	padding-top: 1.8rem;
+}
+
+.navbar-nav {
+	text-align: left
+}
+
+.panel-default {
+	margin-left: 0.8rem;
+	margin-right: 0.8rem;
+}
+
+.alert {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.navbar-default, .panel-title, .panel-default>.panel-heading  {
+	background-color: #255625;
+	color: white;
+}
+
+.navbar-header>.navbar-brand {
+	color: white;
+	font-size: 20pt;
+}
+
+.navbar-default .navbar-nav>.active>a {
+	color: white;
+	background: #255625;
+}
+
+.container-principal {
+	padding-left: 2%;
+}
