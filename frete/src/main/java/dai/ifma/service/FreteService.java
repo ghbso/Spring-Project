@@ -17,7 +17,7 @@ import dai.ifma.repository.Fretes;
 public class FreteService {
 
 	private final Integer TAXA_FRETE = 10;
-	
+
 	@Autowired
 	private Cidades cidades;
 
@@ -26,9 +26,13 @@ public class FreteService {
 
 	@Autowired
 	private Fretes fretes;
-	
-	public Cidade primeiraCidade(){
-		return cidades.findAll().get(0);
+
+	public Cidade primeiraCidade() {
+		List<Cidade> cidadeList = cidades.findAll();
+		if (cidadeList.size() > 0) {
+			return cidadeList.get(0);
+		}
+		return null;
 	}
 
 	public BigDecimal calculaValorTotal(BigDecimal pesoTotal, BigDecimal valorTaxa) {
@@ -41,10 +45,14 @@ public class FreteService {
 		return cidades.findAll();
 	}
 
-	public Cliente primeiroCliente(){
-		return clientes.findAll().get(0);
+	public Cliente primeiroCliente() {
+		List<Cliente> clienteList = clientes.findAll();
+		if (clienteList.isEmpty()){
+			return null;
+		}
+		return clienteList.get(0);
 	}
-	
+
 	public List<Cliente> todosClientes() {
 		return clientes.findAll();
 	}

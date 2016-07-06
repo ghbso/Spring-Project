@@ -31,24 +31,25 @@ import dai.ifma.service.FreteService;
 public class FreteController {
 
 	private static String FRETE_VIEW = "CadastroFrete";
-	private boolean render;
 
 	@Autowired
 	private FreteService service;
 
 	@RequestMapping
 	public String cadastrarFrete(@ModelAttribute Frete frete) {
-	
+
 		ModelAndView modelAndView = new ModelAndView();
 		Cidade cidade = service.primeiraCidade();
-	
-		frete.setCidade(cidade);
-		frete.setPeso(new BigDecimal("0"));
-		frete.setValorTotal(service.calculaValorTotal(frete.getPeso(), cidade.getValorTaxa()));
-		frete.setCliente(this.service.primeiroCliente());
-		
-		modelAndView.addObject(frete);
-		render = true;
+		Cliente cliente = this.service.primeiroCliente();
+
+		if (cidade != null && cliente != null) {
+
+			frete.setCidade(cidade);
+			frete.setPeso(new BigDecimal("0"));
+			frete.setValorTotal(service.calculaValorTotal(frete.getPeso(), cidade.getValorTaxa()));
+			frete.setCliente(cliente);
+			modelAndView.addObject(frete);
+		}
 		return FRETE_VIEW;
 	}
 
@@ -67,8 +68,12 @@ public class FreteController {
 
 	@ModelAttribute("render")
 	public boolean isToRender() {
-		render = true;
-		return render;
+		Cidade cidade = service.primeiraCidade();
+		Cliente cliente = this.service.primeiroCliente();
+		if(cliente!=null && cidade!= null){
+			return true;
+		}
+		return false;
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
@@ -94,5 +99,5 @@ public class FreteController {
 	public List<Cliente> todosClientes() {
 		return service.todosClientes();
 	}
-	
+
 }
