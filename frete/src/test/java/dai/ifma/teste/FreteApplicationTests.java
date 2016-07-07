@@ -1,6 +1,6 @@
 package dai.ifma.teste;
 
-import org.junit.runner.RunWith;
+//import org.junit.runner.RunWith;
 //import org.junit.runners.JUnit4;
 //import org.springframework.boot.test.SpringApplicationConfiguration;
 //import org.springframework.test.context.web.WebAppConfiguration;
@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
 //@RunWith(JUnit4.class)
 //@SpringApplicationConfiguration(classes = FreteApplication.class)
-//@WebAppConfiguration
+@WebAppConfiguration
 public class FreteApplicationTests {
 
 //	@Test
