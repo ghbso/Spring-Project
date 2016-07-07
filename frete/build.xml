@@ -84,7 +84,6 @@
 		<pathelement location="../../../.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar" />
 		<pathelement location="../../../.m2/repository/org/springframework/spring-core/4.2.6.RELEASE/spring-core-4.2.6.RELEASE.jar" />
 		<pathelement location="../../../.m2/repository/org/springframework/spring-test/4.2.6.RELEASE/spring-test-4.2.6.RELEASE.jar" />
-		<pathelement location="../../../.m2/repository/junit/junit/4.12/junit-4.12.jar" />
 	</path>
 	<path id="frete.classpath">
 		<pathelement location="target/classes" />
@@ -136,10 +135,15 @@
 			<exclude name="templates/" />
 			<classpath refid="frete.classpath" />
 		</javac>
-		<javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+		<javac debug="true" debuglevel="${debuglevel}" 
+			destdir="target/test-classes" 
+			includeantruntime="false" 
+			source="${source}"
+			target="${target}">
 			<src path="src/test/java" />
 			<classpath refid="frete.classpath" />
 		</javac>
+		
 	</target>
 	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects" />
 	<target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
