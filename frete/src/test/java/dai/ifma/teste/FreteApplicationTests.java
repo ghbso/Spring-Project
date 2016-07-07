@@ -1,8 +1,10 @@
 package dai.ifma.teste;
 
+import org.junit.Test;
+
 public class FreteApplicationTests {
 
-//	@Test
+	@Test
 	public void contextLoads() {
 	}
 
