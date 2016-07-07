@@ -133,7 +133,7 @@
             <exclude name="templates/"/>
             <classpath refid="frete.classpath"/>
         </javac>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="true" source="${source}" target="${target}">
             <src path="src/test/java"/>
             <classpath refid="frete.classpath"/>
         </javac>
