@@ -1,5 +1,7 @@
 package dai.ifma.teste;
 
+import org.springframework.test.context.web.WebAppConfiguration;
+
 //import org.junit.runner.RunWith;
 //import org.junit.runners.JUnit4;
 //import org.springframework.boot.test.SpringApplicationConfiguration;
