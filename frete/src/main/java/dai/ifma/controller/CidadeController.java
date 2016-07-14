@@ -19,7 +19,7 @@ import dai.ifma.model.Cliente;
 import dai.ifma.service.CidadeService;
 
 @Controller
-@RequestMapping("/cidade")
+@RequestMapping("/")
 public class CidadeController {
 	
 	private static final String NOVA_CIDADE_VIEW = "CadastroCidade";
